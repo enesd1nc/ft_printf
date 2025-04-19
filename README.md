@@ -19,13 +19,13 @@ Bu proje, C dilinde standart `printf` fonksiyonunun özelleştirilmiş bir versi
 1.  Projeyi klonlayın:
 
     ```bash
-    git clone git@github.com:ehabesdev/printf.git
+    git clone https://github.com/enesd1nc/ft_printf.git ftPrintf
     ```
 
 2.  Projeye gidin:
 
     ```bash
-    cd printf
+    cd ft_printf
     ```
 
 3.  Kitaplığı derleyin:
