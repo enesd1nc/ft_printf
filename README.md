@@ -14,6 +14,52 @@ Bu proje, C dilinde standart `printf` fonksiyonunun özelleştirilmiş bir versi
     *   `%X`: İşaretsiz onaltılık tam sayıyı büyük harflerle yazdırır.
     *   `%%`: Yüzde işareti (%) yazdırır.
 
+# 🌟 Öğrendiğim Kazanımlar – Variadic Fonksiyonlar 🌟
+
+## 📚 Konu: `stdarg.h` – C'de Değişken Sayıda Argüman Alan Fonksiyonlar
+
+C dilinde bazı durumlarda fonksiyonlara kaç tane argüman verileceği önceden bilinmeyebilir. İşte tam bu noktada `stdarg.h` kütüphanesi devreye girer! Bu kütüphane sayesinde değişken sayıda argüman alan (variadic) fonksiyonlar yazabiliriz. 📦
+
+---
+
+## 🔧 Kullanılan Makrolar
+
+### 📌 `va_list`
+📝 Argümanları sırayla çekebilmek için tanımladığımız veri tipidir. `va_list`, argümanları dolaşmak için kullanılan bir veri yapısıdır. Fonksiyonun içinde tanımlanarak `va_start` ile başlatılır ve `va_arg` ile her bir argüman alınabilir.
+
+```c
+va_list args;
+```
+
+---
+
+### 🚀 `va_start`
+⏩ Argümanlar arasında gezinmeye başlamak için kullanılır. Bu makro, `va_list` değişkenini başlatmak ve sabit argümandan sonra gelen değişken argümanları hazırlamak için kullanılır. Kullanımı, sabit argümandan sonra gelir.
+
+```c
+va_start(args, last_fixed_param);
+```
+
+---
+
+### 🔁 `va_arg`
+🔍 Sıradaki argümanı çekmek için kullanılır. Bu makro ile `va_list`'ten bir sonraki argüman belirli bir türde alınır. Dikkat: tür doğru verilmelidir, aksi takdirde beklenmeyen davranışlar oluşabilir.
+
+```c
+va_arg(args, int);
+```
+
+---
+
+### 🛑 `va_end`
+✅ Argüman okuma işlemi bittiğinde `va_list` değişkenini sonlandırmak için kullanılır. Bellek sızıntısı olmaması ve sistem kaynaklarının düzgün yönetimi için her `va_start` çağrısı bir `va_end` ile sonlandırılmalıdır.
+
+```c
+va_end(args);
+```
+
+---
+
 ## Kurulum
 
 1.  Projeyi klonlayın:
